@@ -1,0 +1,6 @@
+
+
+
+.PHONY: run
+run:
+	electron .

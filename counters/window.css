@@ -1,0 +1,52 @@
+
+.button{
+    margin: 5px;
+}
+
+.remove-button{
+    margin: auto;
+    float: right;
+}
+
+.counter-label{
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.counter-number{
+    margin-right: 5px;
+    padding: 5px;
+    width: 1cm;
+}
+
+.dice-div{
+    margin-right: 5px;
+    display: inline-block;
+}
+
+#dice{
+    width:100%;
+}
+
+#form{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#counters{
+    margin-top: 1cm;
+    height: auto;
+}
+
+#num-dice{
+    width: 1cm;
+}
+
+#dice-type{
+    width: 1.2cm;
+}
+
+.result-breakdown{
+    margin-top: -3px;
+    visibility: hidden;
+}

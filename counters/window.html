@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <script src="window.js"></script>
+    <link rel="stylesheet" href="window.css">
+    <title>Counters</title>
+</head>
+<body>
+    <form id="form">
+        <div id="dice">
+            <div class="dice-div">
+                <label for="num-dice" >Num.</label> <br>
+                <input type="number" id="num-dice" min="1" value="1">
+            </div>
+            <div class="dice-div">
+                <label for="dice-type" >Type</label> <br>
+                d
+                <select id="dice-type">
+                    <option value="2" >2</option>
+                    <option value="4" >4</option>
+                    <option selected="true" value="6" >6</option>
+                    <option value="8" >8</option>
+                    <option value="10" >10</option>
+                    <option value="12" >12</option>
+                    <option value="20" >20</option>
+                    <option value="100" >100</option>
+                </select>
+            </div>
+            <div class="dice-div">
+                <label>Result</label> <br>
+                <output id="dice-result">12</output>
+            </div>
+            <button type="button" class="button" id="roll-button">Roll</button>
+            <br>
+            <p class="result-breakdown">0</p>
+        </div>
+        <div id="counters">
+            <!-- counter divs are added here-->
+        </div>
+        <button type="button" class="button" id="add-counter-button">Add counter</button>
+        <br>
+        <br>
+        <button type="button" class="button" id="save-button">Save</button>
+        <button type="button" class="button" id="load-button">Load</button>
+    </form>
+</body>
+</html>
