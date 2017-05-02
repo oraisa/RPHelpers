@@ -14,8 +14,9 @@ def roll(diceNum, diceType, modifier)
         resultString += modifier.to_s
     end
 
-    #Don't include the "= sum" part if only one dice is rolled
-    if diceNum == 1 then
+    #Don't include the "= sum" part if only one dice is rolled and there isn't
+    #a modifier
+    if diceNum == 1 and modifier == 0 then
         return resultString
     else
         return resultString + " = " + (results.reduce(0, :+) + modifier).to_s
