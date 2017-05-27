@@ -7,11 +7,12 @@ def roll(diceNum, diceType, modifier)
     end
 
     resultString = results.reduce("") { |s, n| s + n.to_s() + " + " }
-    if modifier == 0 then
-        #Remove trailing + and don't display the modifier it is 0
-        resultString.chomp!(" + ")
-    else
-        resultString += modifier.to_s
+    resultString.chomp!(" + ")
+    if modifier > 0 then
+        #Remove trailing + and don't display the modifier if it is 0
+        resultString += " + " + modifier.to_s
+    elsif modifier < 0 then
+        resultString += " - " + (-modifier).to_s
     end
 
     #Don't include the "= sum" part if only one dice is rolled and there isn't
@@ -23,9 +24,13 @@ def roll(diceNum, diceType, modifier)
     end
 end
 
-match = /(\d+)d(\d+)(?:\+(\d+))?/.match(ARGV[0])
+# match = /(\d*)d(\d+)(?:\+(\d+))?/.match(ARGV[0])
+match = /(\d*)d(\d+)([\+\-]\d+)?/.match(ARGV[0])
 if(match) then
-    puts roll(match[1].to_i, match[2].to_i, if match[3] then match[3].to_i else 0 end)
+    diceNum = match[1].to_i
+    diceType = match[2].to_i
+    mod = match[3].to_i
+    puts roll(if diceNum != 0 then diceNum else 1 end, diceType, if mod then mod else 0 end)
 else
-    puts "The format is n1dn2+n3"
+    puts "The format is n_1dn_2+n_3"
 end
